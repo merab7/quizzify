@@ -22,6 +22,7 @@ import React from "react"
             <h3>Quiz Quest Begins!</h3> 
               
         </div>
+        <div className="formdiv">
     <form id="form">
     <label htmlFor="category">Choose Category: </label>
     <select name="category" id="category" onChange={handleCategoryChange}>
@@ -51,7 +52,7 @@ import React from "react"
     </select>
    
     </form>
-
+    </div>
 
     <form id="form">
     <label htmlFor="difficulty">Choose Difficulty: </label>
