@@ -8,6 +8,11 @@ import React from "react"
       const selectedCategory = event.target.value;
       props.setSelectedCategory(selectedCategory);
     }
+
+    function handelDifficultyChange(event){
+      const selecteddifficulty = event.target.value;
+      props.setSelecteddifficulty(selecteddifficulty);
+    }
   
       return (
         
@@ -18,8 +23,8 @@ import React from "react"
               
         </div>
     <form id="form">
-    
-    <select name="schemes" id="schemes" onChange={handleCategoryChange}>
+    <label htmlFor="category">Choose Category: </label>
+    <select name="category" id="category" onChange={handleCategoryChange}>
     <option value="" >Any Category</option>
     <option value="9">General Knowledge</option>
     <option value="10">Entertainment: Books</option>
@@ -45,6 +50,18 @@ import React from "react"
     <option value="31">Entertainment: Japanese Anime & Manga</option>
     </select>
    
+    </form>
+
+
+    <form id="form">
+    <label htmlFor="difficulty">Choose Difficulty: </label>
+    <select name="difficulty" id="difficulty" onChange={handelDifficultyChange}>
+    <option value="">Any Difficulty </option>
+    <option value="easy" >Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+    </select>
+
     </form>
 
 

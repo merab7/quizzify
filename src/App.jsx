@@ -15,6 +15,7 @@ function App() {
   const [correctCount, setCorrectCount] = useState(0);
   const [playAgain, setPlayAgain] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [Selecteddifficulty, setSelecteddifficulty] = useState("");
  
 
  
@@ -23,7 +24,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch(`https://opentdb.com/api.php?amount=5&category=${selectedCategory}`)
+    fetch(`https://opentdb.com/api.php?amount=5&category=${selectedCategory}&difficulty=${Selecteddifficulty}`)
       .then((res) => res.json())
       .then((data) => {
         const encodedQuestions = data.results.map((result) => ({
@@ -92,7 +93,9 @@ function App() {
   return (
     <main>
       <Intro introDisplayNone={introDisplayNone}
-               setSelectedCategory={setSelectedCategory}   />
+               setSelectedCategory={setSelectedCategory}  
+               setSelecteddifficulty={setSelecteddifficulty}
+                />
       {started && (
         <QuestionPage
           questions={questions}
